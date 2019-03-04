@@ -1,6 +1,6 @@
 # Top Gamers Api
 
-Example of small api JSON to manage Gamers and Games
+Example of small JSON api to manage Gamers and Games
 
 ## Requirements
 
@@ -9,7 +9,7 @@ Example of small api JSON to manage Gamers and Games
 
 ## Installing
 
-Simply download or clone this repository and installing in your web server.
+Simply download or clone this repository and install it on your web server.
 
 ```bash
 - composer install
