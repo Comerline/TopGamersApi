@@ -1,0 +1,12 @@
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/public/bundles/
+/public/images/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+/nbproject/*
+public/deploy-log.txt
