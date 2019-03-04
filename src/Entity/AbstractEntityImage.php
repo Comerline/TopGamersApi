@@ -55,10 +55,36 @@ abstract class AbstractEntityImage {
      */
     function getImagePath() {
         $imagePath = '';
-        if (file_exists(self::FOLDER_IMAGES . '/' . $this->getImageName()) && is_file(self::FOLDER_IMAGES . '/' . $this->getImageName())) {
+        if ($this->imageExists()) {
             $imagePath = 'images/' . $this->getImageName();
         }
         return $imagePath;
+    }
+
+    /**
+     * Get Absoluty Image Url
+     * @return string
+     */
+    function getImageUrl() {
+        $imageUrl = '';
+        if ($this->imageExists()) {
+            $imageUrl = sprintf(
+                    "%s://%s/%s", isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https' : 'http', $_SERVER['SERVER_NAME'], $this->getImagePath()
+            );
+        }
+        return $imageUrl;
+    }
+
+    /**
+     * Check if Image Exists
+     * @return boolean
+     */
+    function imageExists() {
+        $exists = false;
+        if (file_exists(self::FOLDER_IMAGES . '/' . $this->getImageName()) && is_file(self::FOLDER_IMAGES . '/' . $this->getImageName())) {
+            $exists = true;
+        }
+        return $exists;
     }
 
     function setImage(UploadedFile $image = null) {

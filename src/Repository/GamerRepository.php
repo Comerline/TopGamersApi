@@ -32,6 +32,7 @@ class GamerRepository extends ServiceEntityRepository {
                 $allGamers[$gamer->getGame()->getAbbreviation()]['id'] = $gamer->getGame()->getId();
                 $allGamers[$gamer->getGame()->getAbbreviation()]['abbreviation'] = $gamer->getGame()->getAbbreviation();
                 $allGamers[$gamer->getGame()->getAbbreviation()]['name'] = $gamer->getGame()->getName();
+                $allGamers[$gamer->getGame()->getAbbreviation()]['image'] = $gamer->getGame()->getImageUrl();
                 $allGamers[$gamer->getGame()->getAbbreviation()]['gamers'][] = $gamer->toArray();
             }
             $allGamers = ['games' => $allGamers];

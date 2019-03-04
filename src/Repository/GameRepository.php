@@ -26,7 +26,9 @@ class GameRepository extends ServiceEntityRepository {
         if (!empty($games)) {
             foreach ($games as $game) {
                 $allGamers[$game->getAbbreviation()]['id'] = $game->getId();
+                $allGamers[$game->getAbbreviation()]['image'] = $game->getImageUrl();
                 $allGamers[$game->getAbbreviation()]['abbreviation'] = $game->getAbbreviation();
+                $allGamers[$game->getAbbreviation()]['name'] = $game->getName();
                 $allGamers[$game->getAbbreviation()]['name'] = $game->getName();
                 foreach ($game->getGamers() as $gamer) {
                     $allGamers[$game->getAbbreviation()]['gamers'][] = $gamer->toArray();

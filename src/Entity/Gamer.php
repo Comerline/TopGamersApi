@@ -69,7 +69,7 @@ class Gamer extends AbstractEntityImage {
      * @ORM\Column(name="youtube", type="string", length=255, nullable=true)
      */
     private $youtube;
-    
+
     /**
      * @var integer
      *
@@ -118,7 +118,7 @@ class Gamer extends AbstractEntityImage {
     function getGame() {
         return $this->game;
     }
-    
+
     function getPosition() {
         return $this->position;
     }
@@ -158,11 +158,11 @@ class Gamer extends AbstractEntityImage {
     function setGame($game) {
         $this->game = $game;
     }
-    
+
     function setPosition($position) {
         $this->position = $position;
     }
-    
+
     /**
      * Get External Flag Url
      * @param type $size 16|24|32|48|64 Default 32
@@ -171,8 +171,8 @@ class Gamer extends AbstractEntityImage {
     function getFlagUrl($size = 32) {
         $country = $this->getCountry();
         $urlFlag = '';
-        if(!empty($country)) {
-            $urlFlag = 'https://www.countryflags.io/' . strtolower($country). '/flat/' . $size . '.png';
+        if (!empty($country)) {
+            $urlFlag = 'https://www.countryflags.io/' . strtolower($country) . '/flat/' . $size . '.png';
         }
         return $urlFlag;
     }
@@ -184,6 +184,7 @@ class Gamer extends AbstractEntityImage {
     function toArray() {
         $gamerArray = [
             'id' => $this->getId(),
+            'image' => $this->getImageUrl(),
             'account' => $this->getAccount(),
             'name' => $this->getName(),
             'bio' => $this->getBio(),
@@ -191,9 +192,10 @@ class Gamer extends AbstractEntityImage {
             'flag' => $this->getFlagUrl(),
             'server' => $this->getServer(),
             'position' => $this->getPosition(),
-            'twitch' => $this->getTwitch(),
-            'youtube' => $this->getYoutube()
+            'twitch' => is_null($this->getTwitch()) ? '' : $this->getTwitch(),
+            'youtube' => is_null($this->getYoutube()) ? '' : $this->getYoutube()
         ];
+
         return $gamerArray;
     }
 
