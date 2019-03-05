@@ -25,12 +25,12 @@ Simply download or clone this repository and install it on your web server.
       "pubg":{
          "id":1,
          "abbreviation":"pubg",
-         "name":"Player Unknown Battlegrounds",
+         "name":"PLAYERUNKNOWN'S Battlegrounds",
          "gamers":[
             {
                "id":5,
                "account":"testaccount5",
-               "image": "https://api.topgamers.me/images/account.testaccount5.jpg"
+               "image": "https://api.topgamers.me/images/account.testaccount5.jpg",
                "name":"Test 5",
                "bio":"This is Bio of gamer 5",
                "country":"PT",
@@ -43,7 +43,7 @@ Simply download or clone this repository and install it on your web server.
             {
                "id":4,
                "account":"testaccount4",
-               "image": "https://api.topgamers.me/images/account.testaccount4.jpg"
+               "image": "https://api.topgamers.me/images/account.testaccount4.jpg",
                "name":"Test 4",
                "bio":"This is Bio of gamer 4",
                "country":"FR",
@@ -58,12 +58,12 @@ Simply download or clone this repository and install it on your web server.
       "apex":{
          "id":2,
          "abbreviation":"apex",
-         "name":"Apex Legend",
+         "name":"Apex Legends",
          "gamers":[
             {
                "id":6,
                "account":"testaccount6",
-               "image": "https://api.topgamers.me/images/account.testaccount6.jpg"
+               "image": "https://api.topgamers.me/images/account.testaccount6.jpg",
                "name":"Test 6",
                "bio":"This is Bio of gamer 6",
                "country":"ES",
@@ -87,7 +87,7 @@ Simply download or clone this repository and install it on your web server.
       {
          "id":5,
          "account":"testaccount5",
-         "image": "https://api.topgamers.me/images/account.testaccount5.jpg"
+         "image": "https://api.topgamers.me/images/account.testaccount5.jpg",
          "name":"Test 5",
          "bio":"This is Bio of gamer 5",
          "country":"PT",
@@ -100,7 +100,7 @@ Simply download or clone this repository and install it on your web server.
       {
          "id":4,
          "account":"testaccount4",
-         "image": "https://api.topgamers.me/images/account.testaccount4.jpg"
+         "image": "https://api.topgamers.me/images/account.testaccount4.jpg",
          "name":"Test 4",
          "bio":"This is Bio of gamer 4",
          "country":"FR",
@@ -113,7 +113,7 @@ Simply download or clone this repository and install it on your web server.
       {
          "id":1,
          "account":"testaccount1",
-         "image": "https://api.topgamers.me/images/account.testaccount1.jpg"
+         "image": "https://api.topgamers.me/images/account.testaccount1.jpg",
          "name":"Test 1",
          "bio":"This is Bio of gamer 1",
          "country":"ES",
@@ -135,12 +135,12 @@ Simply download or clone this repository and install it on your web server.
       "pubg":{
          "id":1,
          "abbreviation":"pubg",
-         "name":"Player Unknown Battlegrounds",
+         "name":"PLAYERUNKNOWN'S Battlegrounds",
          "gamers":[
             {
                "id":1,
                "account":"testaccount1",
-               "image": "https://api.topgamers.me/images/account.testaccount1.jpg"
+               "image": "https://api.topgamers.me/images/account.testaccount1.jpg",
                "name":"Test 1",
                "bio":"This is Bio of gamer 1",
                "country":"ES",
@@ -153,7 +153,7 @@ Simply download or clone this repository and install it on your web server.
             {
                "id":4,
                "account":"testaccount4",
-               "image": "https://api.topgamers.me/images/account.testaccount4.jpg"
+               "image": "https://api.topgamers.me/images/account.testaccount4.jpg",
                "name":"Test 4",
                "bio":"This is Bio of gamer 4",
                "country":"FR",
@@ -168,12 +168,12 @@ Simply download or clone this repository and install it on your web server.
       "apex":{
          "id":2,
          "abbreviation":"apex",
-         "name":"Apex Legend",
+         "name":"Apex Legends",
          "gamers":[
             {
                "id":6,
                "account":"testaccount6",
-               "image": "https://api.topgamers.me/images/account.testaccount6.jpg"
+               "image": "https://api.topgamers.me/images/account.testaccount6.jpg",
                "name":"Test 6",
                "bio":"This is Bio of gamer 6",
                "country":"ES",
