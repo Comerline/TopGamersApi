@@ -12,7 +12,7 @@ Example of small JSON api to manage Gamers and Games
 Simply download or clone this repository and install it on your web server.
 
 ```bash
-- composer install
+    composer install
 ```
 
 ## Responses
