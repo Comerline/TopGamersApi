@@ -25,6 +25,7 @@ Simply download or clone this repository and install it on your web server.
       "pubg":{
          "id":1,
          "abbreviation":"pubg",
+         "image": "https://api.topgamers.me/images/pubg.jpg",
          "name":"PLAYERUNKNOWN'S Battlegrounds",
          "gamers":[
             {
@@ -58,6 +59,7 @@ Simply download or clone this repository and install it on your web server.
       "apex":{
          "id":2,
          "abbreviation":"apex",
+         "image": "https://api.topgamers.me/images/apex.jpg",
          "name":"Apex Legends",
          "gamers":[
             {
