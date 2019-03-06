@@ -7,6 +7,7 @@ use App\Entity\Game;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Filesystem\Filesystem;
 
 class ApiController extends AbstractController {
 
@@ -16,14 +17,21 @@ class ApiController extends AbstractController {
      */
     public function gamers($game) {
         $gamerRepository = $this->getDoctrine()->getRepository(Gamer::class);
-        if (empty($game) || $game == 'all') {
-            // Get All Gamers
-            $allGamers = $gamerRepository->getAllGamers();
+        $response = '';
+        $cache = $this->getCache('gamers' . $game);
+        if (!empty($cache)) {
+            $response = new JsonResponse($cache);
         } else {
-            // Get All Gamers of Game params
-            $allGamers = $gamerRepository->getGamers($game);
+            if (empty($game) || $game == 'all') {
+                // Get All Gamers
+                $allGamers = $gamerRepository->getAllGamers();
+            } else {
+                // Get All Gamers of Game params
+                $allGamers = $gamerRepository->getGamers($game);
+            }
+            $this->setCache('gamers' . $game, $allGamers);
+            $response = new JsonResponse($allGamers);
         }
-        $response = new JsonResponse($allGamers);
         return $response;
     }
 
@@ -32,10 +40,43 @@ class ApiController extends AbstractController {
      * @return JsonReponse
      */
     public function games() {
-        $gameRepository = $this->getDoctrine()->getRepository(Game::class);
-        $allGames = $gameRepository->getAllGames();
-        $response = new JsonResponse($allGames);
+        $response = '';
+        $cache = $this->getCache('games');
+        if (!empty($cache)) {
+            $response = new JsonResponse($cache);
+        } else {
+            $gameRepository = $this->getDoctrine()->getRepository(Game::class);
+            $allGames = $gameRepository->getAllGames();
+            $this->setCache('games', $allGames);
+            $response = new JsonResponse($allGames);
+        }
         return $response;
+    }
+
+    /**
+     * Get cache of JsonResponse 
+     * @param type $type
+     * @return type
+     */
+    public function getCache($type) {
+        $fileSystem = new Filesystem();
+        $filePath = sys_get_temp_dir() . '/topgamersapi/cache/' . $type . '.json';
+        $cache = '';
+        if ($fileSystem->exists($filePath)) {
+            $cache = json_decode(file_get_contents($fileSystem->readlink($filePath, true)));
+        }
+        return $cache;
+    }
+
+    /**
+     * Set cache of JsonResponse
+     * @param type $type
+     * @param type $data
+     */
+    public function setCache($type, $data) {
+        $fileSystem = new Filesystem();
+        $filePath = sys_get_temp_dir() . '/topgamersapi/cache/' . $type . '.json';
+        $fileSystem->dumpFile($filePath, json_encode($data));
     }
 
 }

@@ -3,6 +3,7 @@
 namespace App\Admin;
 
 use Sonata\AdminBundle\Admin\AbstractAdmin;
+use Symfony\Component\Filesystem\Filesystem;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
@@ -72,6 +73,8 @@ class GameAdmin extends AbstractAdmin {
      * @param Game $game
      */
     public function prePersist($game) {
+        $fileSystem = new Filesystem();
+        $fileSystem->remove(sys_get_temp_dir() . '/topgamersapi/cache');
         $game->upload();
     }
 
@@ -80,6 +83,8 @@ class GameAdmin extends AbstractAdmin {
      * @param Game $game
      */
     public function preUpdate($game) {
+        $fileSystem = new Filesystem();
+        $fileSystem->remove(sys_get_temp_dir() . '/topgamersapi/cache');
         $game->upload();
     }
 
